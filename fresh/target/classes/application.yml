@@ -1,0 +1,18 @@
+server:
+  port: 10031
+  servlet:
+#    context-path: /
+#
+#
+spring:
+  aop:
+    proxy-target-class: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/six?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+#mybatis
+mybatis:
+  type-aliases-package: com.zzk.fresh.entity
+  mapper-locations: classpath:mapper/*.xml
