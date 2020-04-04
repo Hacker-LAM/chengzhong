@@ -18,7 +18,6 @@ public class UserController {
     private User getUser(User o) {
         System.out.println(o.getName());
         User user = userService.login(o.getName(), o.getPassword());
-        System.out.println(user.getId());
         return user;
     }
 
