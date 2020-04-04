@@ -5,6 +5,7 @@ public class User {
     private String name;
     private String password;
     private int phone;
+    private String image;
 
     public int getId() {
         return id;
@@ -36,5 +37,13 @@ public class User {
 
     public void setPhone(int phone) {
         this.phone = phone;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
