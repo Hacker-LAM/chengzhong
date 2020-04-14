@@ -16,16 +16,17 @@ public class UserController {
     //登录
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     private User getUser(User o) {
-        System.out.println(o.getName());
         User user = userService.login(o.getName(), o.getPassword());
         return user;
     }
 
     //注册
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    private User create(User o) {
-        System.out.println(o.getName());
-        User user = userService.create(o);
-        return user;
+    private Boolean create(User o) {
+        if (userService.create(o)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

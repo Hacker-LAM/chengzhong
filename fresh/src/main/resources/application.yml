@@ -11,8 +11,15 @@ spring:
     url: jdbc:mysql://localhost:3306/six?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 #mybatis
 mybatis:
   type-aliases-package: com.zzk.fresh.entity
   mapper-locations: classpath:mapper/*.xml
+  table:
+    auto: ypdate
+  model:
+    pack: com.zzk.fresh.entity
+  database:
+    type: mysql

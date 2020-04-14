@@ -6,6 +6,7 @@ public class User {
     private String password;
     private int phone;
     private String image;
+    private boolean enabled;
 
     public int getId() {
         return id;
@@ -45,5 +46,13 @@ public class User {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 }
