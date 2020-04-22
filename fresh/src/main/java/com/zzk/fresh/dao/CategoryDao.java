@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface CategoryDao {
     @Insert("insert into category(name,enabled) values (#{name},#{enabled})")
-    Category save(String name, boolean enabled);
+    Integer save(String name, boolean enabled);
 
     @Select("select * from category a where a.enabled=#{enabled}")
     List<Category> categories(boolean enabled);

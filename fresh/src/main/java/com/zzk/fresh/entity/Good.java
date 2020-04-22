@@ -1,10 +1,13 @@
 package com.zzk.fresh.entity;
 
-public class Goods {
+import java.io.Serializable;
+
+public class Good implements Serializable {
     private int id;
     private String name;
     private String image;
     private double price;
+    private Category category;
     private boolean enabled;
 
     public int getId() {
@@ -37,6 +40,14 @@ public class Goods {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public boolean isEnabled() {

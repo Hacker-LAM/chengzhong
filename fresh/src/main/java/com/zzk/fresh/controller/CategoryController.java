@@ -14,7 +14,7 @@ public class CategoryController {
 
     //增加类别
     @RequestMapping(value = "category/save", method = RequestMethod.POST)
-    public Category add(Category category) {
+    public Integer add(Category category) {
         return categoryService.save(category);
     }
 

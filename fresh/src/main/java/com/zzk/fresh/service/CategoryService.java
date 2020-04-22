@@ -13,7 +13,7 @@ public class CategoryService {
     private CategoryDao categoryDao;
 
     //增加类别
-    public Category save(Category category) {
+    public Integer save(Category category) {
         return categoryDao.save(category.getName(), true);
     }
 
