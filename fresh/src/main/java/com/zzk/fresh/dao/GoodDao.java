@@ -15,4 +15,7 @@ public interface GoodDao {
 
     @Select("select * from good a where a.enabled=#{enabled}")
     List<Good> goods(boolean enalbed);
+
+    @Select("select * from good a where a.category=#{category_id} and a.enabled=#{enabled}")
+    List<Good> goodsByCategory(int category_id, boolean enabled);
 }

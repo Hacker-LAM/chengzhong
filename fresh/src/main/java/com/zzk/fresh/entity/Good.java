@@ -1,13 +1,19 @@
 package com.zzk.fresh.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import java.io.Serializable;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Good implements Serializable {
     private int id;
     private String name;
     private String image;
     private double price;
-    private Category category;
+    @JsonIdentityReference(alwaysAsId = true)
+    private int category;
     private boolean enabled;
 
     public int getId() {
@@ -42,11 +48,11 @@ public class Good implements Serializable {
         this.price = price;
     }
 
-    public Category getCategory() {
+    public int getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(int category) {
         this.category = category;
     }
 

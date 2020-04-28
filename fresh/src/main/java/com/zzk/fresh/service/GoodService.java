@@ -25,4 +25,9 @@ public class GoodService {
     public List<Good> goods(Good good) {
         return goodDao.goods(good.isEnabled());
     }
+
+    //根据category查询商品
+    public List<Good> goods(int category_id) {
+        return goodDao.goodsByCategory(category_id, true);
+    }
 }
