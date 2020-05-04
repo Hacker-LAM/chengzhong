@@ -9,16 +9,12 @@ import java.util.List;
 import java.util.Set;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class Good implements Serializable {
+public class ShoppingCart implements Serializable {
     private int id;
     private String name;
-    private String image;
-    private double price;
-    @JsonIdentityReference(alwaysAsId = true)
-    private int category;
     private boolean enabled;
     @JsonIdentityReference(alwaysAsId = true)
-    private List<ShoppingCart> shoppingCarts;
+    private List<Good> goods;
 
     public int getId() {
         return id;
@@ -36,28 +32,12 @@ public class Good implements Serializable {
         this.name = name;
     }
 
-    public String getImage() {
-        return image;
+    public List<Good> getGoods() {
+        return goods;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getCategory() {
-        return category;
-    }
-
-    public void setCategory(int category) {
-        this.category = category;
+    public void setGoods(List<Good> goods) {
+        this.goods = goods;
     }
 
     public boolean isEnabled() {
@@ -66,13 +46,5 @@ public class Good implements Serializable {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
-    }
-
-    public List<ShoppingCart> getShoppingCarts() {
-        return shoppingCarts;
-    }
-
-    public void setShoppingCarts(List<ShoppingCart> shoppingCarts) {
-        this.shoppingCarts = shoppingCarts;
     }
 }
