@@ -25,4 +25,10 @@ public class ShoppingCartController {
     public Integer save(ShoppingCart shoppingCart) {
         return shoppingCartService.save(shoppingCart);
     }
+
+    //根据购物车名获取购物车
+    @RequestMapping(value = "shoppingcart/name", method = RequestMethod.POST)
+    public ShoppingCart getShoppingCart(ShoppingCart shoppingCart) {
+        return shoppingCartService.getShoppingCart(shoppingCart);
+    }
 }

@@ -15,4 +15,7 @@ public interface ShoppingCartDao {
 
     @Insert("INSERT INTO shopping_cart(name, enabled) VALUES (#{name}, #{enabled})")
     Integer save(String name, boolean enabled);
+
+    @Select("SELECT * FROM shopping_cart a WHERE a.name=#{name} AND a.enabled=#{enabled}")
+    ShoppingCart findByName(String name, boolean enabled);
 }

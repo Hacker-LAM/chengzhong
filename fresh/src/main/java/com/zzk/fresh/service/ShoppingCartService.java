@@ -39,4 +39,9 @@ public class ShoppingCartService {
     public Integer save(ShoppingCart shoppingCart) {
         return shoppingCartDao.save(shoppingCart.getName(), true);
     }
+
+    //根据购物车名获取购物车
+    public ShoppingCart getShoppingCart(ShoppingCart shoppingCart) {
+        return shoppingCartDao.findByName(shoppingCart.getName(), true);
+    }
 }
